@@ -57,7 +57,7 @@ void distance()
   //  delay(250);
   if (!morningAlarmState)
   {
-    if (RangeInCentimeters < 90)
+    if (RangeInCentimeters < 85)
     {
       ledState = HIGH;
       digitalWrite(ledPin, ledState);

@@ -73,8 +73,9 @@ void setup()
     Serial.println("RTC has set the system time");
 
   // create the alarms
-  Alarm.alarmRepeat(05, 30, 0, MorningAlarm); // 8:30am every day
-  Alarm.alarmRepeat(19, 00, 0, EveningAlarm); // 5:45pm every day
+  Alarm.alarmRepeat(05, 30, 0, MorningAlarm); // 5:30am every day
+  Alarm.alarmRepeat(11, 30, 0, MorningAlarm);
+  Alarm.alarmRepeat(19, 00, 0, EveningAlarm); // 19:00pm every day
   Alarm.alarmRepeat(dowSaturday, 8, 30, 30, WeeklyAlarm); // 8:30:30 every Saturday
   Alarm.timerRepeat(15, Repeats);            // timer for every 15 seconds
   Alarm.timerOnce(10, OnceOnly);             // called once after 10 seconds
