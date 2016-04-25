@@ -29,12 +29,12 @@ const int colorB = 0;
 //Pin setting
 
 //LED lighting output pin control thru mosfet
-const int ledPin =  7;      // the number of the LED pin
+const int ledPin1 =  7;      // the number of the LED pin
+const int ledPin2 =  6;      // the number of the LED pin
 const int fanPin = 5; // the number of the fan pin
 const int tempPin = A3; //Temperature sensor
-const int buttonPin = 2;     // the number of the pushbutton pin
-const int batteryVoltPin = A2; //voltage measurement pin
-const int batteryLowLEDPin = 6; //low battery voltage LED pin
+
+
 const long displayOnDuration = 300000; // lcd on for 5 minutes (300 000 ms)
 
 // Variables will change :
@@ -54,10 +54,9 @@ void setup()
   Serial.begin(9600);
 
   // set the digital pin
-  pinMode(ledPin, OUTPUT);
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
   pinMode(fanPin, OUTPUT);
-  pinMode(batteryLowLEDPin, OUTPUT);
-  pinMode(buttonPin, INPUT);
 
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
@@ -74,7 +73,9 @@ void setup()
 
   // create the alarms
   Alarm.alarmRepeat(05, 30, 0, MorningAlarm); // 5:30am every day
-  Alarm.alarmRepeat(11, 30, 0, MorningAlarm);
+  Alarm.alarmRepeat(06, 30, 0, MorningAlarm);
+  Alarm.alarmRepeat(10, 15, 0, MorningAlarm);
+  Alarm.alarmRepeat(12, 35, 0, MorningAlarm);
   Alarm.alarmRepeat(19, 00, 0, EveningAlarm); // 19:00pm every day
   Alarm.alarmRepeat(dowSaturday, 8, 30, 30, WeeklyAlarm); // 8:30:30 every Saturday
   Alarm.timerRepeat(15, Repeats);            // timer for every 15 seconds
@@ -85,6 +86,8 @@ void  loop() {
   digitalClockDisplay();
   fanControl();
   distance();
+  Serial.print("morning alarm state ");//0~400cm
+  Serial.println(morningAlarmState);
   Alarm.delay(500); // wait 0.5 second between clock display
 }
 

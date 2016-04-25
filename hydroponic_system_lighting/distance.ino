@@ -60,12 +60,14 @@ void distance()
     if (RangeInCentimeters < 85)
     {
       ledState = HIGH;
-      digitalWrite(ledPin, ledState);
+      digitalWrite(ledPin1, ledState);
+      digitalWrite(ledPin2, ledState);
       nearbyOnTime = millis();
     } else if (RangeInCentimeters > 100 & (millis() - nearbyOnTime > 3000 ))
     {
       ledState = LOW;
-      digitalWrite(ledPin, ledState);
+      digitalWrite(ledPin1, ledState);
+      digitalWrite(ledPin2, ledState);
     }
   }
 
