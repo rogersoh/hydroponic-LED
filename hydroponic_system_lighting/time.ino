@@ -2,14 +2,16 @@
 void MorningAlarm() {
   Serial.println("Alarm: - turn Plant Light On");
   ledState = HIGH;
-  digitalWrite(ledPin, ledState);
+  digitalWrite(ledPin1, ledState);
+  digitalWrite(ledPin2, ledState);
   morningAlarmState = true;
 }
 
 void EveningAlarm() {
   Serial.println("Alarm: - turn Plant lights Off");
   ledState = LOW;
-  digitalWrite(ledPin, ledState);
+  digitalWrite(ledPin1, ledState);
+  digitalWrite(ledPin2, ledState);
   morningAlarmState = false;
 }
 
