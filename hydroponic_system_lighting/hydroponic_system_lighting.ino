@@ -46,7 +46,6 @@ double temperatureC;
 //state
 int ledState = LOW;             // ledState used to set the LED
 int fanState = LOW;
-int buttonState = LOW;         // variable for reading the pushbutton status
 bool morningAlarmState = false; // morning alarm off
 
 void setup()
