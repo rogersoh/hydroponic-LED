@@ -73,7 +73,7 @@ void setup()
   // create the alarms
   Alarm.alarmRepeat(05, 30, 0, MorningAlarm); // 5:30am every day
   Alarm.alarmRepeat(06, 30, 0, MorningAlarm);
-  Alarm.alarmRepeat(10, 15, 0, MorningAlarm);
+  Alarm.alarmRepeat(11, 15, 0, MorningAlarm);
   Alarm.alarmRepeat(12, 35, 0, MorningAlarm);
   Alarm.alarmRepeat(19, 00, 0, EveningAlarm); // 19:00pm every day
   Alarm.alarmRepeat(dowSaturday, 8, 30, 30, WeeklyAlarm); // 8:30:30 every Saturday
